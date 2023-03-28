@@ -12,18 +12,10 @@ dotenv.config();
 let mainDbStatus = false;
 
 const connectToDBs = () => {
-  mongoose.connect(
-    "" + process.env.MONGO,
-    {
-      useNewUrlParser: true,
-      useUnifiedTopology: true,
-    } as ConnectOptions,
-    (err) => {
-      if (err) return console.error(err);
-      console.log("Connected to Main MongoDB");
-      mainDbStatus = true;
-    }
-  );
+  mongoose.connect("" + process.env.MONGO, {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+  } as ConnectOptions);
 
   if (!mainDbStatus) setTimeout(connectToDBs, 180000);
 };
