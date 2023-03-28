@@ -1,4 +1,5 @@
 import { Survey } from "survey-react-ui";
+import "survey-react-ui/survey.css";
 
 const survey = {
   pages: [
@@ -15,7 +16,7 @@ const survey = {
           type: "text",
           inputType: "email",
           name: "email",
-          title: "What is your email §ress?",
+          title: "What is your email address?",
           isRequired: true,
           validators: [
             {
