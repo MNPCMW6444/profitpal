@@ -5,6 +5,7 @@
     "build": "tsc",
     "prebuild": "npm install",
     "start": "ts-node ./src/index.ts",
+    "dep": "ts-node ./src/index.ts",
     "prestart": "npm run build",
     "dev": "ts-node-dev --respawn --transpile-only --exit-child --watch src src/index.ts"
   },
