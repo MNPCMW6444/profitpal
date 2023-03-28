@@ -1,29 +1,23 @@
-import React from "react";
-import logo from "./logo.svg";
+import { Typography } from "@mui/material";
+import Button from "@mui/material/Button";
+import { useState } from "react";
 import "./App.css";
 
+const ethereum = (window as any).ethereum;
+
 function App() {
-  if (typeof (window as any).ethereum !== "undefined") {
-    console.log("MetaMask is installed!");
-  }
+  const login = async () => {
+    const accounts = await ethereum.request({ method: "eth_requestAccounts" });
+    setAcount(accounts[0]);
+  };
+
+  const [account, setAcount] = useState<any>(null);
 
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <Button onClick={login}>login</Button>
+      <Typography>Account: {account}</Typography>
+    </>
   );
 }
 
