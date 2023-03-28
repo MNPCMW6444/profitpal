@@ -17,7 +17,8 @@
   "dependencies": {
     "cookie-parser": "^1.4.6",
     "cors": "^2.8.5",
-    "mongoose": "^7.0.3"
+    "mongoose": "^7.0.3",
+    "tsc": "^2.0.4"
   },
   "devDependencies": {
     "@types/cookie-parser": "^1.4.3",
