@@ -1,9 +1,12 @@
 import React from "react";
-import "survey-creator/survey-creator.css";
-import { Survey } from "survey-creator";
+import "./App.css";
+import { SurveyModel } from "survey-core";
+import { Survey } from "survey-react";
 
-export default function Quest() {
-  const survey = {
+import "./survey-styles.css";
+
+function App() {
+  const surveyJson = {
     pages: [
       {
         name: "personal_information",
@@ -92,5 +95,13 @@ export default function Quest() {
     ],
   };
 
-  return <Survey model={survey} />;
+  const survey = new SurveyModel(surveyJson);
+
+  return (
+    <div className="App">
+      <Survey model={survey} />
+    </div>
+  );
 }
+
+export default App;
