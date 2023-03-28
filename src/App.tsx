@@ -1,5 +1,5 @@
 import { Survey } from "survey-react-ui";
-import "survey-react-ui/survey.css";
+import "survey-core/defaultV2.min.css";
 
 const survey = {
   pages: [
