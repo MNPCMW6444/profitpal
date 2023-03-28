@@ -2,10 +2,14 @@ import { Typography } from "@mui/material";
 import Button from "@mui/material/Button";
 import { useState } from "react";
 import "./App.css";
-import Quest from "./Quest";
 
 function App() {
-  return <Quest />;
+  return (
+    <>
+      <Button>login</Button>
+      <Typography>Account: {"account"}</Typography>
+    </>
+  );
 }
 
 export default App;
