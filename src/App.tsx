@@ -88,7 +88,7 @@ const survey = {
     },
   ],
 };
-const Quest = () => {
+const App = () => {
   return <Survey model={survey} />;
 };
-export default Quest;
+export default App;
