@@ -4,9 +4,9 @@
   "scripts": {
     "build": "tsc",
     "prebuild": "npm install",
-    "start": "ts-node ./src/index.ts",
-    "dep": "node ./built/index.ts",
-    "prestart": "npm run build",
+    "dep": "ts-node ./src/index.ts",
+    "start": "node ./built/index.ts",
+    "predep": "npm run build",
     "dev": "ts-node-dev --respawn --transpile-only --exit-child --watch src src/index.ts"
   },
   "repository": {
