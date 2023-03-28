@@ -1,7 +1,9 @@
+import { Model } from "survey-core";
 import { Survey } from "survey-react-ui";
+
 import "survey-core/defaultV2.min.css";
 
-const survey = {
+const survey = new Model({
   pages: [
     {
       name: "personal_information",
@@ -88,7 +90,8 @@ const survey = {
       ],
     },
   ],
-};
+});
+
 const App = () => {
   return <Survey model={survey} />;
 };
