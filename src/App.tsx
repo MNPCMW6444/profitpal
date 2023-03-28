@@ -1,8 +1,12 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import logo from "./logo.svg";
+import "./App.css";
 
 function App() {
+  if (typeof (window as any).ethereum !== "undefined") {
+    console.log("MetaMask is installed!");
+  }
+
   return (
     <div className="App">
       <header className="App-header">
