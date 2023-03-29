@@ -30,17 +30,6 @@ function remove(loc: string): Promise<void> {
 }
 
 /**
- * Copy file
- */
-function copy(src: string, dest: string): Promise<void> {
-  return new Promise((res, rej) => {
-    return fs.copy(src, dest, (err) => {
-      return !!err ? rej(err) : res();
-    });
-  });
-}
-
-/**
  * Execute system command
  */
 function exec(cmd: string, loc: string): Promise<void> {
