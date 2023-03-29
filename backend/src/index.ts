@@ -18,6 +18,7 @@ const connectToDBs = () => {
   } as ConnectOptions);
 
   if (!mainDbStatus) setTimeout(connectToDBs, 180000);
+  else console.log("connected to mongo");
 };
 
 connectToDBs();
