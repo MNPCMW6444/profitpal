@@ -1,95 +1,45 @@
-import PPSurvey from "./components/PPSurvey";
-
-const surveyJson = {
-  pages: [
-    {
-      name: "personal_information",
-      elements: [
-        {
-          type: "text",
-          name: "name",
-          title: "What is your full name?",
-          isRequired: true,
-        },
-        {
-          type: "text",
-          inputType: "email",
-          name: "email",
-          title: "What is your email address?",
-          isRequired: true,
-          validators: [
-            {
-              type: "email",
-            },
-          ],
-        },
-      ],
-    },
-    {
-      name: "investment_experience",
-      elements: [
-        {
-          type: "radiogroup",
-          name: "experience",
-          title: "What is your level of experience with investing?",
-          isRequired: true,
-          choices: ["Beginner", "Intermediate", "Advanced", "Expert"],
-        },
-      ],
-    },
-    {
-      name: "investment_goal",
-      elements: [
-        {
-          type: "radiogroup",
-          name: "goal",
-          title: "What is your primary investment goal?",
-          isRequired: true,
-          choices: [
-            "Capital preservation",
-            "Income generation",
-            "Growth",
-            "Speculation",
-          ],
-        },
-      ],
-    },
-    {
-      name: "risk_tolerance",
-      elements: [
-        {
-          type: "radiogroup",
-          name: "risk",
-          title: "What is your risk tolerance?",
-          isRequired: true,
-          choices: [
-            "Low - I prefer to minimize risk even if it means lower returns",
-            "Medium - I am willing to take some risk for moderate returns",
-            "High - I can tolerate significant risk for potentially higher returns",
-          ],
-        },
-      ],
-    },
-    {
-      name: "investment_period",
-      elements: [
-        {
-          type: "radiogroup",
-          name: "period",
-          title: "What is your intended investment time horizon?",
-          isRequired: true,
-          choices: [
-            "Short-term (less than 1 year)",
-            "Medium-term (1-3 years)",
-            "Long-term (more than 3 years)",
-          ],
-        },
-      ],
-    },
-  ],
-};
+import { useState } from "react";
+import POC from "./components/POC";
+import { Box, Typography, Button } from "@mui/material";
 
 const App = () => {
-  return <PPSurvey surveyJson={surveyJson} />;
+  const [x, setX] = useState("");
+
+  return x ? (
+    x === "vcs" ? (
+      <POC vcs />
+    ) : (
+      <POC />
+    )
+  ) : (
+    <Box
+      display="flex"
+      flexDirection="column"
+      alignItems="center"
+      justifyContent="center"
+      minHeight="100vh"
+    >
+      <Typography variant="h4" gutterBottom>
+        Are you a founder or a VC manager?
+      </Typography>
+      <Box mt={2}>
+        <Button
+          variant="contained"
+          color="primary"
+          onClick={() => setX("vcs")}
+          style={{ marginRight: "16px" }}
+        >
+          VC Manager
+        </Button>
+        <Button
+          variant="contained"
+          color="primary"
+          onClick={() => setX("founders")}
+        >
+          Founder
+        </Button>
+      </Box>
+    </Box>
+  );
 };
 export default App;
