@@ -165,7 +165,7 @@ const POC = ({ vcs }: any) => {
   return vcs ? (
     <PPSurvey surveyJson={vcsx} type="vc" />
   ) : (
-    <PPSurvey surveyJson={founders} ype="founder" />
+    <PPSurvey surveyJson={founders} type="founder" />
   );
 };
 export default POC;
