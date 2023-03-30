@@ -1,9 +1,6 @@
-import { Model } from "survey-core";
-import { Survey } from "survey-react-ui";
+import PPSurvey from "./components/PPSurvey";
 
-import "survey-core/defaultV2.min.css";
-
-const survey = new Model({
+const surveyJson = {
   pages: [
     {
       name: "personal_information",
@@ -90,9 +87,9 @@ const survey = new Model({
       ],
     },
   ],
-});
+};
 
 const App = () => {
-  return <Survey model={survey} />;
+  return <PPSurvey surveyJson={surveyJson} />;
 };
 export default App;
