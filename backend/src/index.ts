@@ -3,6 +3,7 @@ import cors from "cors";
 import dotenv from "dotenv";
 import mongoose, { ConnectOptions } from "mongoose";
 import cookieParser from "cookie-parser";
+import Survey from "@models/surveyModel";
 
 const app = express();
 const port = process.env.PORT || 6555;
@@ -46,3 +47,15 @@ app.use(cookieParser());
 app.listen(port, () => console.log(`Server started on port: ${port}`));
 
 app.get("/areyoualive", (_, res) => res.json({ answer: "yes" }));
+
+app.post("/sacesurvey", async (req, res) => {
+  try {
+    const { owner, data } = req.body;
+    const newSurvey = new Survey({ owner, data });
+    const mres = await newSurvey.save();
+    res.json(mres);
+  } catch (e) {
+    console.log(e);
+    res.status(400);
+  }
+});
