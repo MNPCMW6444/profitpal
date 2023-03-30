@@ -62,14 +62,16 @@ const ProgressBarWithText = ({ founder }: any) => {
   const [progress, setProgress] = useState(0);
 
   const sentences = [
-    `Searching for VC firms that specialize in ${founder.companyStage} funding...`,
-    `Analyzing potential VC partners based on investment focus and portfolio...`,
-    `Checking compatibility with VC firms that invest in ${founder.industry}...`,
-    `Searching for VC firms that prefer ${founder.preferredCompanyStage} companies...`,
-    `Researching VC firms with investment sizes of at least ${founder.investmentSize}...`,
-    `Reviewing VC firms' past investment performance and success...`,
-    `Searching for VC firms that have invested in companies with a similar company stage and funding amount...`,
-    `Reviewing portfolio companies of potential VC partners for fit with your company...`,
+    `Analyzing potential ${founder.type} investors based on investment focus and portfolio...`,
+    `Checking compatibility with ${founder.type} investors that invest in ${founder.vertical}...`,
+    `Searching for ${founder.type} investors that prefer ${founder.businessModel} business models...`,
+    `Researching ${founder.type} investors with investment sizes of at least ${founder.netRevenue["2022"]}...`,
+    `Reviewing ${founder.type} investors' past investment performance and success...`,
+    `Searching for ${founder.type} investors that have invested in companies with a similar ${founder.businessModel} business model and revenue streams...`,
+    `Reviewing portfolio companies of potential ${founder.type} investors for fit with your company...`,
+    `Analyzing potential ${founder.type} investors based on their interest vector and surrounding...`,
+    `Checking compatibility with ${founder.type} investors that invest in ${founder.geographicalMarkets}...`,
+    `Searching for ${founder.type} investors that specialize in ${founder.vertical}...`,
   ];
 
   const [currentSentence, setCurrentSentence] = useState<any>(
