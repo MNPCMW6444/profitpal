@@ -5,12 +5,12 @@ import { Model } from "survey-core";
 import axios from "axios";
 import UserContext from "../context/UserContext";
 
-export default function PPSurvey({ surveyJson }: any) {
+export default function PPSurvey({ surveyJson, type }: any) {
   const { user } = useContext(UserContext);
   const survey = new Model(surveyJson);
   const surveyComplete = useCallback(
     ({ data }: any) => {
-      axios.post("/savesurvey", { owner: user, data });
+      axios.post("/save" + type, { owner: user, data });
     },
     [user]
   );
