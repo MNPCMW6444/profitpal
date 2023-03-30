@@ -48,7 +48,7 @@ app.listen(port, () => console.log(`Server started on port: ${port}`));
 
 app.get("/areyoualive", (_, res) => res.json({ answer: "yes" }));
 
-app.post("/sacesurvey", async (req, res) => {
+app.post("/savesurvey", async (req, res) => {
   try {
     const { owner, data } = req.body;
     const newSurvey = new Survey({ owner, data });
