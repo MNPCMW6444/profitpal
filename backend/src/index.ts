@@ -37,7 +37,7 @@ app.use(
   cors({
     origin: [
       "http://localhost:5999",
-      "https://profitpal.flexboxtorchy.com",
+      "https://caphub.flexboxtorchy.com",
       "https://app.profitpal.com",
     ],
     credentials: true,
