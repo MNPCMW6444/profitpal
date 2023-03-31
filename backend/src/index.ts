@@ -3,8 +3,9 @@ import cors from "cors";
 import dotenv from "dotenv";
 import mongoose, { ConnectOptions } from "mongoose";
 import cookieParser from "cookie-parser";
-import VC from "./models/vcModel";
-import Founder from "./models/founderModel";
+import Survey from "@models/vcModel";
+import VC from "@models/vcModel";
+import Founder from "@models/founderModel";
 
 const app = express();
 const port = process.env.PORT || 6555;

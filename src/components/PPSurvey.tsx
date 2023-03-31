@@ -10,7 +10,6 @@ export default function PPSurvey({ surveyJson, type }: any) {
   const survey = new Model(surveyJson);
   const surveyComplete = useCallback(
     ({ data }: any) => {
-      debugger;
       axios.post("/save" + type, { owner: user, data });
     },
     [user]
